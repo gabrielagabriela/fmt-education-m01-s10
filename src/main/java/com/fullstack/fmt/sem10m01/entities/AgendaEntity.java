@@ -15,11 +15,11 @@ public class AgendaEntity {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "aluno_id")
+    @JoinColumn(name = "aluno_id", referencedColumnName = "id")
     private AlunoEntity aluno;
 
     @ManyToOne
-    @JoinColumn(name = "tutor_id")
+    @JoinColumn(name = "tutor_id", referencedColumnName = "id")
     private TutorEntity tutor;
 
     @Column(nullable = false)
