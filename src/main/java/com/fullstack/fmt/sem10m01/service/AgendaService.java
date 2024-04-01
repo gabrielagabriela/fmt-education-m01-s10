@@ -9,4 +9,8 @@ public interface AgendaService extends GenericService<AgendaEntity> {
     List<AgendaEntity> buscarPorAlunoId(Long id);
 
     List<AgendaEntity> buscarPorTutorId(Long id);
+
+    List<AgendaEntity> bscarProximosPorAlunoId(Long id);
+
+    List<AgendaEntity> bscarProximosPorTutorId(Long id);
 }

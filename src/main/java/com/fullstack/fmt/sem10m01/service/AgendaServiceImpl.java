@@ -7,6 +7,7 @@ import com.fullstack.fmt.sem10m01.exception.NotFoundException;
 import com.fullstack.fmt.sem10m01.repositories.AgendaRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -71,5 +72,17 @@ public class AgendaServiceImpl implements AgendaService {
     public List<AgendaEntity> buscarPorTutorId(Long tutorId) {
         tutorService.buscarPorId(tutorId);
         return repository.findByTutorId(tutorId);
+    }
+
+    @Override
+    public List<AgendaEntity> bscarProximosPorAlunoId(Long alunoId) {
+        alunoService.buscarPorId(alunoId);
+        return repository.findByAlunoIdAndDataGreaterThanOrderByData(alunoId, LocalDateTime.now());
+    }
+
+    @Override
+    public List<AgendaEntity> bscarProximosPorTutorId(Long tutorId) {
+        tutorService.buscarPorId(tutorId);
+        return repository.findByTutorIdAndDataGreaterThanOrderByData(tutorId, LocalDateTime.now());
     }
 }

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -23,7 +24,7 @@ public class AgendaEntity {
     private TutorEntity tutor;
 
     @Column(nullable = false)
-    private LocalDate data;
+    private LocalDateTime data;
 
     private Boolean status;
 
