@@ -20,7 +20,6 @@ public class AgendaEntity {
 
     @ManyToOne
     @JoinColumn(name = "tutor_id")
-    @Column(nullable = false)
     private TutorEntity tutor;
 
     @Column(nullable = false)
